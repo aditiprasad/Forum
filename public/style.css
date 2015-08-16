@@ -1,9 +1,25 @@
 body {
-    font-family: 'Ubuntu', sans-serif;
+ color: white;
+background-color: whitesmoke;
+ font-weight: 500;
+ text-shadow: 0 1px 1px black;
+ font-size: 16px;
+     
+
+
+    
 }
 .container {
     max-width: 960px;
     margin: 0 auto;
+    height: 960px;
+    background: url('http://www.psdgraphics.com/wp-content/uploads/2014/02/colorful-triangles.jpg') ;
+    background-size: 100% 100%;
+ 
+}
+
+.shadow {
+  box-shadow: 3px 3px 15px 16px #ccc;
 }
 
 .header {
@@ -13,3 +29,24 @@ body {
 .content {
     text-align: center;
 }
+.pure-g {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+ input {
+  padding: 7px;
+  font-size: 15px;
+  background: #F5F5F5;
+  text-align: center;
+  color: black;
+
+ }
+
+ form {
+    text-align: center;
+    background-color: transparent;
+ }

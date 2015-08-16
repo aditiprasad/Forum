@@ -3,15 +3,17 @@
     <title></title>
       <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <link rel="stylesheet" href="/font-awesome.min.css">
+<!--   <link rel="stylesheet" type="text/css" href="/style.css"> -->
 </head>
 <body> 
   <div class="container">
     <div>
         <h1> Thread - <%= thread.title %> </h1>
         <h4> Posted by <%= thread.user_name_thread %> </h4> 
-<!--         <form method="POST" action="/threads">
-            <input type="submit" name="likes" value="Like"> <i class="fa fa-thumbs-up fa-2x"></i>
-        </form> -->
+        <form method="POST" action="/threads/<% thread.id %>?_method=PUT">
+            <input type="submit" name="likes" value="<%= thread.likes %>">
+        </form>
     </div>
 <div>
    <% comments.forEach(function(element){ %>
@@ -25,7 +27,7 @@
        <fieldset>
         <legend>Comments</legend>
         <input type="text" name="user_name_comment" placeholder="User Name">
-        <TEXTAREA name="entry"></TEXTAREA>
+        <textarea name="entry"></textarea>
         <input type="submit" value="Add Comment"
        </fieldset>
      </form> 

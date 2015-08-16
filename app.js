@@ -27,6 +27,7 @@ app.get("/", function(req, res){
             console.log(error);
         } else {
             console.log(rows);
+
             var template = fs.readFileSync("views/index.html", "utf8");
             var rendered = ejs.render(template, {all : rows});
             res.send(rendered);  
@@ -87,15 +88,27 @@ app.post("/threads/:thread_id/comments", function(req, res){
                     console.log(error);
                 } else {
 
-                    res.redire("/");
+                    res.redirect("/");
                 }
             })
         }
-    })
-})
+    });
+});
 
 
-
+app.put("/threads/:id", function(req, res){
+    console.log(req.params.id);
+    console.log(req.body.likes);
+    var id = req.params.id;
+    var likes = req.body.likes;
+    db.get("UPDATE threads SET likes=? WHERE id=?", likes, id, function(error){
+        if(error){
+            console.log(error);
+        } else {
+            res.redirect("/");
+        }
+    });
+});
 
 
 

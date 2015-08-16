@@ -3,12 +3,13 @@
   <title></title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-<!--   <link href='http://fonts.googleapis.com/css?family=Ubuntu:400italic' rel='stylesheet' type='text/css'> -->
+
   <link rel="stylesheet" type="text/css" href="/style.css">
 
 </head>
 <body>
-  <div class="container">
+  <div class="container shadow">
+    <div class="top pure-u-1">
     <div class="header">
      <h1>Welcome to # Over!</h1>
    </div>
@@ -17,15 +18,16 @@
      <p>You can add or create a new thread and you can post comments on any thread!</p>
      <p>Go ahead and # Over!</p>
    </div>
+   </div>
 
      <div>
     <form method="POST" action="/threads">
-      <fieldset>
-        <legend>Create a new thread</legend>
+<!--       <fieldset> -->
+Create a new thread
         <input type="text" name="title" placeholder="Title">
         <input type="text" name="user_name_thread" placeholder="User Name">
-        <input type="submit" value="Create">
-      </fieldset>
+        <input type="submit" value="Create" class="pure-button">
+<!--       </fieldset> -->
     </form>
   </div>
 
@@ -34,7 +36,7 @@
       <h3>All Threads</h3>
       <ul>
         <% all.forEach(function(element){ %>
-        <li> <a href="/threads/<%= element.id %>"> <%= element.title %></a> </li>
+        <li> <a href="/threads/<%= element.id %>" > <%= element.title %></a> </li>
         <% }) %>
       </ul>
 
