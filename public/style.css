@@ -4,6 +4,7 @@ background-color: whitesmoke;
  font-weight: 500;
  text-shadow: 0 1px 1px black;
  font-size: 16px;
+ font-family: 'Merriweather', serif;
      
 
 
@@ -24,6 +25,7 @@ background-color: whitesmoke;
 
 .header {
     text-align: center;
+
 }
 
 .content {
@@ -36,17 +38,51 @@ background-color: whitesmoke;
 
 a {
     color: white;
+    font-size: 16px;
 }
  input {
   padding: 7px;
   font-size: 15px;
-  background: #F5F5F5;
+  background: whitesmoke;
   text-align: center;
   color: black;
+}
 
- }
+
+textarea{
+  background: whitesmoke;
+  text-align: center;
+  padding: 7px;
+  font-size: 15px;
+}
+
 
  form {
     text-align: center;
     background-color: transparent;
  }
+
+.button {
+  background-color: orange;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+.like {
+  color: grey;
+}
+.add {
+  color: black;
+}
+
+
+.thread{
+  text-align: center;
+}
+
+.entry {
+  color: black;
+}
+
+
+

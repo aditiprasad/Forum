@@ -3,33 +3,44 @@
     <title></title>
       <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-  <link rel="stylesheet" href="/font-awesome.min.css">
-<!--   <link rel="stylesheet" type="text/css" href="/style.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body> 
-  <div class="container">
-    <div>
-        <h1> Thread - <%= thread.title %> </h1>
-        <h4> Posted by <%= thread.user_name_thread %> </h4> 
-        <form method="POST" action="/threads/<% thread.id %>?_method=PUT">
-            <input type="submit" name="likes" value="<%= thread.likes %>">
-        </form>
+  <div class="container shadow">
+    <div class="header pure-u-1 pure-u-md-1">
+      <h1># OVER</h1>
     </div>
-<div>
+    <div class="pure-u-1 pure-u-md-1 thread">
+        <h1> <%= thread.title %> </h1>
+        <h4> Posted by <%= thread.user_name_thread %> </h4> 
+        <span>
+        <form method="POST" action="/threads/<%= thread.id %>?_method=PUT" class="pure-u-1">
+            <input type="hidden" name="thread_id" value="<%= thread.id%>">
+            <input type="hidden" name="likes" value="<%= thread.likes %>">
+            <input type="hidden" name="vote" value="1">
+            <button class="pure-button like" type="submit" value="Like"><i class="fa fa-thumbs-up fa-2x"><%= thread.likes %></i></button>
+        </form>
+        </span>
+    </div>
+<div class="pure-u-3-5">
    <% comments.forEach(function(element){ %>
    <h2><%= element.user_name_comment %>: </h3>
    <h4> <%= element.entry %> </h4>
 <% }) %>
 </div>
 
-    <div>
-     <form method="POST" action="/threads/:thread_id/comments">
+    <div class=" pure-u-1 pure-u-md-1" >
+     <form method="POST" action="/threads/<%=thread.id%>/comments" class="pure-form">
        <fieldset>
-        <legend>Comments</legend>
+        <legend class="comments">Add Comments</legend>
         <input type="text" name="user_name_comment" placeholder="User Name">
-        <textarea name="entry"></textarea>
-        <input type="submit" value="Add Comment"
-       </fieldset>
+        <textarea name="entry" placeholder="Write comment"></textarea>
+        <input type="hidden" name="thread_id" value="<%= thread.id %>">
+        <input type="hidden" name="count" value="<%= comments.count %>">
+        <input type="hidden" name="one" value="1">
+        <button type="submit" value="Add Comment" class="pure-button add"><i class="fa fa-comment"> Add Comment</i></button>
      </form> 
     </div>
   </div>  

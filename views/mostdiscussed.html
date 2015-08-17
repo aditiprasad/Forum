@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Most Discussed Topics</title>
+</head>
+<body>
+    <h1>These are all the threads that have been discussed at length</h1>
+
+    <% discussed.forEach(function(element){ %>
+       <ul>
+        <li><a href="/threads/<%= element.id %>"><%= element.title %></li>
+       </ul>
+       <% }) %>
+</body>
+</html>
