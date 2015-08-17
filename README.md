@@ -13,9 +13,9 @@
 >5. This is a responsive forum and works on mobile phones.
 
 >## Planning :
->![image1] :Users/aditiprasad/dev/wdi/projectTwo/images/image1.JPG
->![image2] : Users/aditiprasad/dev/wdi/projectTwo/images/image2.JPG
+<img src="/images/image1.JPG"<img>
+<img src="/images/image2.JPG"<img>  
 >Trello was also used in the planning and execution process to help keep track of tasks and timelines, although not extensively.
 
 >## Disclosure :
-> Help was taken from instructors, fellow students, and the internet while building this application.
+> While building this application, help was taken from instructors, fellow students, and the internet.

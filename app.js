@@ -35,7 +35,7 @@ app.get("/", function(req, res){
                 if(error){
                     console.log(error);
                 } else {
-                    db.all("SELECT threads.title, threads.user_name_thread, threads.likes, COUNT (comments.count) AS total_comments FROM comments INNER JOIN threads ON comments.thread_id=threads.id GROUP BY threads.id ORDER BY comments.count DESC", function(error, rows){
+                    db.all("SELECT threads.title, threads.user_name_thread, threads.likes, threads.id, COUNT (comments.count) AS total_comments FROM comments INNER JOIN threads ON comments.thread_id=threads.id GROUP BY threads.id ORDER BY comments.count ASC", function(error, rows){
                         var discuss = rows;
                         console.log(discuss);
                         var template = fs.readFileSync("views/index.html", "utf8");
@@ -133,7 +133,6 @@ app.put("/threads/:id", function(req, res){
             console.log(error);
         } else {
             console.log(req.params.thread_id);
-             c
             res.redirect("/threads/"+id);
         }
     });
